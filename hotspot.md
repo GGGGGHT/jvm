@@ -11,6 +11,8 @@
     - tools
     - Vm
 - test
+
+<br/>
 其中`src`目录下就是HotSpot的主体源码,`share`目录下是独立于操作系统和处理器类型的代码,这部分代码是HotSpot的核心业务,实现了HotSpot的主要功能
 `Vm`目录下是实现虚拟机各项功能的`Vm`目录. `Tools`目录下是几个独立的虚拟机工具
 
