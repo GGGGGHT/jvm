@@ -27,3 +27,5 @@ Klass向JVM提供两个功能:
 |oopsHierachy|描述了对象表示层次|
 |Klass|klassOop的一部分,用来描述语言层的类型|
 |instanceKlass|虚拟机层面描述一个java类|
+
+![image](https://user-images.githubusercontent.com/26846402/130542414-0cec51a2-b741-4998-8283-c612735396a9.png)
