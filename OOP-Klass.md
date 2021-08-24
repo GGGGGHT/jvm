@@ -29,3 +29,17 @@ Klass向JVM提供两个功能:
 |instanceKlass|虚拟机层面描述一个java类|
 
 ![image](https://user-images.githubusercontent.com/26846402/130542414-0cec51a2-b741-4998-8283-c612735396a9.png)
+
+在虚拟机内部通过instanceOopDesc来表示一个Java对象. 对象在内存中的而已可以分为连续的两部分: instanceOopDesc和实例数据
+```c
+volatile markOop  _mark;
+  union _metadata {
+    Klass*      _klass;
+    narrowKlass _compressed_klass;
+  } _metadata;
+```
+instanceOopDesc或arrayOopDesc又被称为对象头,对象头包括两部分信息:
+- _mark 存储对象运行时记录信息,如hashcode GC分代年龄 线程持有的锁,偏向线程id..
+- metadata指针 指向描述类型的Klass对象的指针,Klass对象包含了实例对象所属类型的元数据. 虚拟机频繁使用这个指针定位到位于方法区内的类型信息.
+
+arrayOopDesc与instanceOopDesc都拥有继承自基类的oopDesc的mark word和元数据指针.但二者在对象头上的唯一区别在于,arrayOop增加一个描述数组长度的字段
