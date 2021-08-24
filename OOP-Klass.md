@@ -9,3 +9,21 @@
 Klass向JVM提供两个功能:
   - 实现语言层面的Java类
   - 实现Java对象的分发功能.
+
+|模块|模块功能|
+|--|--|
+|oop|定义了在OOPS共同基类|
+|constantPoolOop|表示在Class文件中描述的常量池|
+|cpCacheOop|即constantPoolCacheOop 是与constantPoolOop相们生的数据结构,缓存了字段和方法的访问信息,为运行时环境快速访问字段和方法提供重要作用|
+|arrayOop|定义了数组OOPS的抽象基类|
+|instanceOop|表示一个Java类型实例|
+|makrOop|表示对象头|
+|typeArrayOop|表示容纳基本类型的数组|
+|constMethodOop|表示一个Java方法中的不变信息|
+|methodDataOop|记录恨不能信息的数据结构|
+|methodOop|表示一个Java方法|
+|objArrayOop|表示一个持有OOPS的数组|
+|klassOop|描述一个与Java类对等的C++类|
+|oopsHierachy|描述了对象表示层次|
+|Klass|klassOop的一部分,用来描述语言层的类型|
+|instanceKlass|虚拟机层面描述一个java类|
