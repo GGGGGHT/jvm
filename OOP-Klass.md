@@ -43,3 +43,13 @@ instanceOopDesc或arrayOopDesc又被称为对象头,对象头包括两部分信�
 - metadata指针 指向描述类型的Klass对象的指针,Klass对象包含了实例对象所属类型的元数据. 虚拟机频繁使用这个指针定位到位于方法区内的类型信息.
 
 arrayOopDesc与instanceOopDesc都拥有继承自基类的oopDesc的mark word和元数据指针.但二者在对象头上的唯一区别在于,arrayOop增加一个描述数组长度的字段
+
+在Java应用程序运行过程中，每创建一个Java对象，在JVM内部也相应创建一个对象头，因此对象头的内存布局设计关乎着内存空间的利用率。
+OOP框架中采用一项内存优化措施是对类元数据指针进行压缩存储
+-XX：+UseCompressedOops 在64位JVM上，对类元数据指针(_metadata成员) 使用32位指针存储
+开启指针压缩能在一定程度上降低开销
+
+实例字段存储的顺序： 
+按照longs/doubles ints shorts/chars bytes/booleans OOPS的顺序进行分配。相同宽度的字段问题被分配到一起。在满足这个前提条件的前提下，可能会出现
+一种情况即在父类中定义的变量可能会出现在子类之前。在默认情况下，VM选项`CompactFields`为true，表示子类之中较窄的变量可能会插入到父类变量的空隙之中
+
