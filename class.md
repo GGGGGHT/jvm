@@ -23,3 +23,11 @@ enum ClassState {
 ![image](https://user-images.githubusercontent.com/26846402/130573174-63cefa2d-01ea-4aa6-8e46-7096b6343494.png)
 
 当你这次完成`加载`，`链接`，`初始化`后这个Java类型就可以在JVM中正常被使用了，如创建这个类的实例对象，访问该类的静态域或者调用该类的静态方法
+
+
+
+## 加载
+ClassFileParser::parseClassFile
+## 链接 
+InstanceKlass::link_class_impl
+## 初始化
