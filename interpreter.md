@@ -8,3 +8,6 @@ AbstractInterpreter定义了基于汇编模型的解释器以及解释器生成�
 `模板解释器`是hotspot默认的解释器 <br/>
 
 在HotSpot启动时,初始化解释器模块时,会使用解释器生成器一次性生成所有的Codelets.模板解释器使用的生成器为C++类TemplateInterpreterGenerator,通过generate_all函数生成许多虚拟机内部公用全称和字节码codelets
+
+## 模板表与转发表
+模板用来描述指定字节码的机器码生成模板的属性,并拥有一个生成器函数用来生成模板.所有的字节码的模板组合在一起,构成一个模板表.表中每个元素都是一个Template,元素按照字节码值的递增顺序排列,第n号元素表示的就是bytecode值为n的Template
