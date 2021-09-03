@@ -41,3 +41,11 @@ JVM指令集中还加入了对象的创建和操作类型的指令
 - `iastore` `lastore` `fastore` `dastore` 把一个值从操作数栈存储到数组成员
 - arraylength 获取数组的长度
 - instanceof checkcast 检查类实例或者数组的属性
+
+## 控制转移指令
+控制转移指令能够有条件性地使JVM从一条非控制转移指令后面的指令位置继续执行
+- 条件转移: ifeq iflt ifle ifne ifgt...
+- 无条件转移: goto goto_w jsr jsr_w ret
+- 复合条件转移: tableswitch lookupswitch
+
+
