@@ -18,3 +18,16 @@ HotSpot中的JVM的指令集就是一款堆栈型指令集。<br/>
 - Load类指令(数据方向: 局部变量 -> 操作数栈) 包括`iload_<n>`,`lload_<n>`,`fload_<n>`,`dload_<n>`,`aload_<n>`
 - Store类指令(数据方向: 操作数栈 -> 局部变量) 包括`istore_<n>`. etc..
 - 能够将来自立即数或常量池的数据传送到操作数栈的指令 包括`bipush`,`sipush`,`ldc` etc..
+
+## 类型转换 
+类型转换指令是将两种JVM数值类型相互转换，这些操作一般用于实现用户代码的显式类型转换操作。类型转换方式有两种:
+1. 宽化类型转换指令 将小范围类型数据向大范围类型数据转换 
+  - int类型到long,float,double 
+  - long类型到float,double
+  - float到double
+  这类指令不会千万数据精度丢失
+2. 窄化类型转换指令
+  - int类型到byte,short,char
+  - long类型到int
+  - float到int,long
+  - double到int,long,float
