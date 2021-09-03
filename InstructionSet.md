@@ -11,3 +11,10 @@ HotSpot中的JVM的指令集就是一款堆栈型指令集。<br/>
 4. 执行(Execute)
 5. 存储结果(Result Store)
 6. 获取下一条指令(Next Instruction)
+
+## 数据传送指令
+### 局部变量 常量池和操作数栈之间的数据传送
+用于在虚拟机局部变量和操作数栈之间传送数据的指令主要有3类
+- Load类指令(数据方向: 局部变量 -> 操作数栈) 包括`iload_<n>`,`lload_<n>`,`fload_<n>`,`dload_<n>`,`aload_<n>`
+- Store类指令(数据方向: 操作数栈 -> 局部变量) 包括`istore_<n>`. etc..
+- 能够将来自立即数或常量池的数据传送到操作数栈的指令 包括`bipush`,`sipush`,`ldc` etc..
