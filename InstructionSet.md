@@ -31,3 +31,5 @@ HotSpot中的JVM的指令集就是一款堆栈型指令集。<br/>
   - long类型到int
   - float到int,long
   - double到int,long,float
+
+## 对象的创建和操作
