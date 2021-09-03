@@ -48,4 +48,6 @@ JVM指令集中还加入了对象的创建和操作类型的指令
 - 无条件转移: goto goto_w jsr jsr_w ret
 - 复合条件转移: tableswitch lookupswitch
 
-
+## 函数调用
+在虚拟机中，实现函数调用的指令是以invoke开头命名的指令:
+- invokevirtual: 调用普通实例方法
