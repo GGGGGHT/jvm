@@ -33,3 +33,11 @@ HotSpot中的JVM的指令集就是一款堆栈型指令集。<br/>
   - double到int,long,float
 
 ## 对象的创建和操作
+JVM指令集中还加入了对象的创建和操作类型的指令
+- new指令 创建一个新的类实例
+- `newarray` `anewarray` `multianewarray` 创建一个新的数组
+- `getField` `putfield` `getstatic` `putstatic` 访问类变量和实例变量
+- `iaload` `laload` `faload` 把一个数组成员冷却塔到操作数栈
+- `iastore` `lastore` `fastore` `dastore` 把一个值从操作数栈存储到数组成员
+- arraylength 获取数组的长度
+- instanceof checkcast 检查类实例或者数组的属性
