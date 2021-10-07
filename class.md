@@ -37,4 +37,3 @@ InstanceKlass::link_class_impl
  1. 尝试在 TLAB 中分配
  2. 如果失败并且对象很大，则在共享 Eden 中分配
  3. 如果上述失败（或不适用），则转到慢速情况
-   //（创建一个新的TLAB等）
